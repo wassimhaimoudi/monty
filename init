@@ -1,0 +1,5 @@
+	char line[1000];
+        FILE *file = NULL;
+        int line_number, i, valid, validInst_len;
+        char *opcode;
+        char *validInst[] = {"push", "pall", "pop", "swap"};
