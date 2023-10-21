@@ -14,11 +14,14 @@ void (*get_op_func(char *s))(stack_t **, unsigned int)
 		{"pop", pop},
 		{"nop", nop},
 		{"swap", swap},
+		{"add", add},
 		{NULL, NULL}};
 	int i;
+	int len;
 
 	i = 0;
-	while (i < 5)
+	len = sizeof(op) / sizeof(op[0]);
+	while (i < len)
 	{
 		if (strncmp(s, op[i].opcode, 3) == 0)
 		{

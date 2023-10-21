@@ -6,3 +6,6 @@ pop
 pall
 swap
 pall
+push 6
+add
+pall

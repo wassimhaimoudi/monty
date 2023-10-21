@@ -39,3 +39,23 @@ void swap(stack_t **top, unsigned int line_number)
 
 	(*top) = top2;
 }
+/**
+ * add - add the two top elements of the stack_t doubly linked list
+ * @top: the top of the linked list
+ * @line_number: the line number of te instruction
+ *
+ * Return: void
+ */
+void add(stack_t **top, unsigned int line_number)
+{
+	int result;
+
+	if (!(*top) || !((*top)->next))
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	result = (*top)->n + (*top)->next->n;
+	pop(top, line_number);
+	(*top)->n = result;
+}
