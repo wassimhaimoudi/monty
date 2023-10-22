@@ -59,3 +59,43 @@ void add(stack_t **top, unsigned int line_number)
 	pop(top, line_number);
 	(*top)->n = result;
 }
+/**
+ * sub - subtracts the top element from the second top element
+ * @top: the top of the stack_t doubly linked list
+ * @line_number: the line number of the instrux
+ *
+ * Return: void
+ */
+void sub(stack_t **top, unsigned int line_number)
+{
+	int result;
+
+	if (!(*top) || !((*top)->next))
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	result = (*top)->n + (*top)->next->n;
+	pop(top, line_number);
+	(*top)->n = result;
+}
+/**
+ * mul - multiplies the two top elements of the stack
+ * @top: the top element of the stack_t doubly linked list
+ * @line_number: the line number of the instrux
+ *
+ * Return: void
+ */
+void mul(stack_t **top, unsigned int line_number)
+{
+	int result;
+
+	if (!(*top) || (!(*top)->next))
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	result = (*top)->n * (*top)->next->n;
+	pop(top, line_number);
+	(*top)->n = result;
+}

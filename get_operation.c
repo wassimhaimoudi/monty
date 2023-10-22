@@ -15,6 +15,12 @@ void (*get_op_func(char *s))(stack_t **, unsigned int)
 		{"nop", nop},
 		{"swap", swap},
 		{"add", add},
+		{"sub", sub},
+		{"mul", mul},
+		{"div", div},
+		{"mod", mod},
+		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}};
 	int i;
 	int len;

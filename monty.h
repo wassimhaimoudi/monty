@@ -37,13 +37,18 @@ typedef struct instruction_s
 
 extern stack_t *top;
 
-int push(stack_t **top, unsigned int line_number, char *value);
-void pall(stack_t **top, unsigned int line_number);
-void pop(stack_t **top, unsigned int line_number);
-void swap(stack_t **top, unsigned int line_number);
-void pint(stack_t **top, unsigned int line_number);
-void nop(stack_t **top, unsigned int line_number);
-void add(stack_t **top, unsigned int line_number);
+int push(stack_t **, unsigned int, char *);
+void pall(stack_t **, unsigned int);
+void pop(stack_t **, unsigned int);
+void swap(stack_t **, unsigned int);
+void pint(stack_t **, unsigned int);
+void nop(stack_t **, unsigned int);
+void add(stack_t **, unsigned int);
+void sub(stack_t **, unsigned int);
+void mul(stack_t **, unsigned int);
+void mod(stack_t **, unsigned int);
+void rotl(stack_t **, unsigned int);
+void rotr(stack_t **, unsigned int);
 void (*get_op_func(char *s))(stack_t **, unsigned int);
 char *revstr(char *s);
 void free_stack(stack_t **top);

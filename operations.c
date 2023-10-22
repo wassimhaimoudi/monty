@@ -97,3 +97,27 @@ void pint(stack_t **top, unsigned int line_number)
 	num = (*top)->n;
 	printf("%d\n", num);
 }
+/**
+ * div - Divides the second element of the stack by the first element.
+ * @top: The top of the stack_t stack doubly linkd list
+ * @line_number: The  line number of the instruction
+ *
+ * Return: void
+ */
+void div(stack_t **top, unsigned int line_number)
+{
+	int result;
+
+	if (!(*top) || !((*top)->next))
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*top)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_number);
+	}
+	result = (*top)->next->n / (*top)->n;
+	pop(top, line_number);
+	(*top)->n = result;
+}
