@@ -31,11 +31,11 @@ void rotl(stack_t **top, unsigned int line_number)
 /**
  * rotr - reverse the stack
  * @top: head of the linked list
- * @cline: line number of the instruction
+ * @line_number: line number of the instruction
  *
  * Return: Void
  */
-void rotr(stack_t **top, unsigned int cline)
+void rotr(stack_t **top, unsigned int line_number)
 {
 	stack_t *temp = NULL;
 	(void)line_number;
@@ -71,7 +71,7 @@ void mod(stack_t **top, unsigned int line_number)
 
 	if (!(*top) || !((*top)->next))
 	{
-		fprintf(stderr, "L%u: can't mod, stack too short\n");
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*top)->n == 0)

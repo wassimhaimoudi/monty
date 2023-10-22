@@ -98,13 +98,13 @@ void pint(stack_t **top, unsigned int line_number)
 	printf("%d\n", num);
 }
 /**
- * div - Divides the second element of the stack by the first element.
+ * divi - Divides the second element of the stack by the first element.
  * @top: The top of the stack_t stack doubly linkd list
  * @line_number: The  line number of the instruction
  *
  * Return: void
  */
-void div(stack_t **top, unsigned int line_number)
+void divi(stack_t **top, unsigned int line_number)
 {
 	int result;
 
